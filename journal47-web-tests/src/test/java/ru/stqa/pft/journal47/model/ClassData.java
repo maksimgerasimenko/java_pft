@@ -1,4 +1,4 @@
-package ru.stqa.pft.journal47;
+package ru.stqa.pft.journal47.model;
 
 public class ClassData {
   private final String nameForClass;
