@@ -12,10 +12,10 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
   FirefoxDriver wd;
 
-
   private HelperNavigation helperNavigation;
   private HelperClass helperClass;
   private HelperSession helperSession;
+  private HelperSubject helperSubject;
 
   public static boolean isAlertPresent(FirefoxDriver wd) {
       try {
@@ -30,10 +30,11 @@ public class ApplicationManager {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("https://journal47test.herokuapp.com/");
-    helperSession.login("admin", "secret");
+    helperSubject = new HelperSubject(wd);
     helperClass = new HelperClass(wd);
     helperNavigation = new HelperNavigation(wd);
     helperSession = new HelperSession(wd);
+    helperSession.login("admin", "secret");
   }
 
   public void stop() {
@@ -51,5 +52,9 @@ public class ApplicationManager {
 
   public HelperNavigation getHelperNavigation() {
     return helperNavigation;
+  }
+
+  public HelperSubject getHelperSubject() {
+    return helperSubject;
   }
 }

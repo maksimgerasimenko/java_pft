@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * Created by maksim.gerasimenko on 10/30/16.
  */
 public class HelperSession {
-  FirefoxDriver wd;
+  private FirefoxDriver wd;
 
   public HelperSession(FirefoxDriver wd) {
     this.wd = wd;
@@ -23,4 +23,3 @@ public class HelperSession {
     wd.findElement(By.name("commit")).click();
   }
 }
-
