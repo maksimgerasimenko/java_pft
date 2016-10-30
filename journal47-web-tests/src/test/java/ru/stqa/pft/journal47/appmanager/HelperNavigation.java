@@ -16,4 +16,7 @@ public class HelperNavigation {
   public void goToClassPage() {
       wd.findElement(By.linkText("Классы")).click();
   }
+  public void goToSubjectPage() {
+    wd.findElement(By.linkText("Предметы")).click();
+  }
 }
