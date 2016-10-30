@@ -14,10 +14,6 @@ public class HelperClass {
     this.wd = wd;
   }
 
-  public void commitClassCreation() {
-      wd.findElement(By.name("commit")).click();
-  }
-
   public void fillClassForm(ClassData classData) {
       wd.findElement(By.id("form_name")).click();
       wd.findElement(By.id("form_name")).clear();

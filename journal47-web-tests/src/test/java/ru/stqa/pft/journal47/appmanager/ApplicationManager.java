@@ -16,6 +16,7 @@ public class ApplicationManager {
   private HelperClass helperClass;
   private HelperSession helperSession;
   private HelperSubject helperSubject;
+  private HelperLearner helperLearner;
 
   public static boolean isAlertPresent(FirefoxDriver wd) {
       try {
@@ -30,6 +31,7 @@ public class ApplicationManager {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("https://journal47test.herokuapp.com/");
+    helperLearner = new HelperLearner(wd);
     helperSubject = new HelperSubject(wd);
     helperClass = new HelperClass(wd);
     helperNavigation = new HelperNavigation(wd);
@@ -56,5 +58,9 @@ public class ApplicationManager {
 
   public HelperSubject getHelperSubject() {
     return helperSubject;
+  }
+
+  public HelperLearner getHelperLearner() {
+    return helperLearner;
   }
 }

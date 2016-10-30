@@ -19,4 +19,10 @@ public class HelperNavigation {
   public void goToSubjectPage() {
     wd.findElement(By.linkText("Предметы")).click();
   }
+  public void commitAllActions() {
+    wd.findElement(By.name("commit")).click();
+  }
+  public void goToLearnerPage() {
+    wd.findElement(By.linkText("Ученики")).click();
+  }
 }

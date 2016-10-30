@@ -10,7 +10,7 @@ public class ClassCreationTests extends TestBase {
         app.getHelperNavigation().goToClassPage();
         app.getHelperClass().initClassCreation();
         app.getHelperClass().fillClassForm(new ClassData("8-B"));
-        app.getHelperClass().commitClassCreation();
+        app.getHelperNavigation().commitAllActions();
         app.getHelperNavigation().goToClassPage();
     }
 

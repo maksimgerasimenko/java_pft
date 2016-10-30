@@ -13,9 +13,6 @@ public class HelperSubject {
   public HelperSubject(FirefoxDriver wd) {
     this.wd = wd;
   }
-  public void commitSubjectCreation() {
-    wd.findElement(By.name("commit")).click();
-  }
 
   public void fillSubjectPage(SubjectData subjectData) {
     wd.findElement(By.id("subject_name")).click();

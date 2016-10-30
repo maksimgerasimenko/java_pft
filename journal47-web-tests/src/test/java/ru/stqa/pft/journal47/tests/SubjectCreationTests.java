@@ -10,7 +10,7 @@ public class SubjectCreationTests extends TestBase{
         app.getHelperNavigation().goToSubjectPage();
         app.getHelperSubject().initSubjectCreation();
         app.getHelperSubject().fillSubjectPage(new SubjectData("History"));
-        app.getHelperSubject().commitSubjectCreation();
+        app.getHelperNavigation().commitAllActions();
         app.getHelperNavigation().goToSubjectPage();
     }
 }
