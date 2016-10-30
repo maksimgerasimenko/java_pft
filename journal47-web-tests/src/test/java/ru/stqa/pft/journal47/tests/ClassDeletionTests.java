@@ -6,10 +6,10 @@ public class ClassDeletionTests extends TestBase {
 
   @Test
   public void testClassDeletion() {
-    app.goToClassPage();
-    app.deleteSelectedClass();
+    app.getHelperNavigation().goToClassPage();
+    app.getHelperClass().deleteSelectedClass();
     app.setAlertToOk();
-    app.goToClassPage();
+    app.getHelperNavigation().goToClassPage();
   }
 
 }
