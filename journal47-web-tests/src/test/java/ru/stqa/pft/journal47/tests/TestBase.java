@@ -9,7 +9,7 @@ import ru.stqa.pft.journal47.appmanager.ApplicationManager;
  */
 public class TestBase {
 
-  protected final ApplicationManager app = new ApplicationManager();
+  public static final ApplicationManager app = new ApplicationManager();
 
   @BeforeMethod
   public void setUp() throws Exception {
