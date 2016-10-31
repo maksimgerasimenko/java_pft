@@ -1,8 +1,12 @@
 package ru.stqa.pft.journal47.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.journal47.model.ClassData;
+import ru.stqa.pft.journal47.tests.TestBase;
+
+import java.util.List;
 
 /**
  * Created by maksim.gerasimenko on 10/30/16.
@@ -26,5 +30,13 @@ public class HelperClass {
 
   public void deleteSelectedClass() {
     wd.findElement(By.linkText("Удалить")).click();
+  }
+
+  public void deleteAllSelectedClass() {
+    List<WebElement> elements = wd.findElements(By.linkText("Удалить"));
+    for (int i = 0; i < elements.size(); i++) {
+      wd.findElement(By.linkText("Удалить")).click();
+      TestBase.app.setAlertToOk();
+    }
   }
 }
