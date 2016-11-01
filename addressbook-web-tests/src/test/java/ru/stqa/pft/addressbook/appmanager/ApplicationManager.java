@@ -17,7 +17,6 @@ public class ApplicationManager {
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
-  private NavigationContactHelper navigationContactHelper;
   private ContactHelper contactHelper;
   private String browser;
 
@@ -36,10 +35,9 @@ public class ApplicationManager {
       wd = new InternetExplorerDriver();
     }
 
-    wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/group.php");
     contactHelper = new ContactHelper(wd);
-    navigationContactHelper = new NavigationContactHelper(wd);
     groupHelper = new GroupHelper(wd);
     navigationHelper = new NavigationHelper(wd);
     sessionHelper = new SessionHelper(wd);
@@ -60,9 +58,5 @@ public class ApplicationManager {
 
   public ContactHelper getContactHelper() {
     return contactHelper;
-  }
-
-  public NavigationContactHelper getNavigationContactHelper() {
-    return navigationContactHelper;
   }
 }
