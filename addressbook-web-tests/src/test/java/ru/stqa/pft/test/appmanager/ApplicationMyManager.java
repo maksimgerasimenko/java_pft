@@ -3,7 +3,7 @@ package ru.stqa.pft.test.appmanager;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.appmanager.ContactHelper;
-import ru.stqa.pft.addressbook.appmanager.NavigationContactHelper;
+import ru.stqa.pft.addressbook.appmanager.NavigationHelper;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +14,7 @@ public class ApplicationMyManager {
   FirefoxDriver wd;
 
   private SessionHelper sessionHelper;
-  private NavigationContactHelper navigationContactHelper;
+  private NavigationHelper navigationHelper;
   private ContactHelper contactHelper;
 
   public static boolean isAlertPresent(FirefoxDriver wd) {
@@ -31,7 +31,7 @@ public class ApplicationMyManager {
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/index.php");
     contactHelper = new ContactHelper(wd);
-    navigationContactHelper = new NavigationContactHelper(wd);
+    navigationHelper = new NavigationHelper(wd);
     sessionHelper = new SessionHelper(wd);
     sessionHelper.login("admin", "secret");
   }
@@ -44,7 +44,7 @@ public class ApplicationMyManager {
     return contactHelper;
   }
 
-  public NavigationContactHelper getNavigationContactHelper() {
-    return navigationContactHelper;
+  public NavigationHelper getNavigationHelper() {
+    return navigationHelper;
   }
 }
